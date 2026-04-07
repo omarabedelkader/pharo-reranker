@@ -1,0 +1,13 @@
+uvicorn codebert:app --host 0.0.0.0 --port 8000
+uvicorn lightgbm1111:app --host 0.0.0.0 --port 8000
+
+uvicorn app:app --host 0.0.0.0 --port 8000
+
+
+uvicorn app2:app --host 0.0.0.0 --port 8000
+
+
+uvicorn cat:app --host 0.0.0.0 --port 8000
+
+kill -9 $(lsof -ti :8000)
+

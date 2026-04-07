@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
+
+# python train_qwen3_rerankers.py --config config.yaml --only qwen3-reranker-4b
+# python train_qwen3_rerankers.py --config config.yaml
+
 # =========================
 # User settings
 # =========================

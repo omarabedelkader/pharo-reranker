@@ -1,3 +1,36 @@
+#Smalltalk
+# changes file
+*.changes
+*.chg
+
+# system image
+*.image
+*.img7
+*.img
+
+# Pharo Smalltalk Debug log file
+PharoDebug.log
+
+# Squeak Smalltalk Debug log file
+SqueakDebug.log
+
+# Dolphin Smalltalk source file
+*.sml
+
+# Dolphin Smalltalk error file
+*.errors
+
+# Monticello package cache
+/package-cache
+
+# playground cache
+/play-cache
+/play-stash
+
+# Metacello-github cache
+/github-cache
+github-*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -205,3 +238,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+Pharo Smalltalk
+*baseimage/
+
+
+*DS_Store
+*.log
+*.tmp
+*.bak

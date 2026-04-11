@@ -3,6 +3,7 @@
 *.changes
 *.chg
 
+3-bench/image
 3-bench/models
 1-data/image
 # system image

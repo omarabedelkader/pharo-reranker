@@ -3,9 +3,11 @@
 *.changes
 *.chg
 
-3-bench/image
-3-bench/models
-1-data/image
+bench/image
+bench/models
+data/image
+bench/*pid
+archive/
 # system image
 *.image
 *.img7

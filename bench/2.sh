@@ -7,9 +7,11 @@ curl -fsSL https://get.pharo.org/140+vm | bash
 curl -fLO https://files.pharo.org/image/140/Pharo14.0-SNAPSHOT.build.415.sha.359c9be46a.arch.64bit.zip
 unzip -o Pharo14.0-SNAPSHOT.build.415.sha.359c9be46a.arch.64bit.zip
 ./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval "2+2"
-echo "Done image installation"
+echo "IMAGE OK"
 
-./pharo Pharo.image eval --save "
+
+
+./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval --save "
 Metacello new
     githubUser: 'omarabedelkader'
     project: 'AI-Sorter'
@@ -17,4 +19,10 @@ Metacello new
     path: 'src';
     baseline: 'AISorter';
     load."
-echo "Done AI installation"
+
+echo "AI-SORTER OK"
+
+echo "Done Bench installation"
+./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval --save "CooStaticBenchmarksVariablesSorter nec."
+
+echo "BENCH OK"

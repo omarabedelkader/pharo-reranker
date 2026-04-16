@@ -1,9 +1,10 @@
 #!/bin/sh
 
-source_file="image/nec.txt"
-destination_folder="resutls"
+source_folder="image"
+destination_folder="results"
 
 mkdir -p "$destination_folder"
-mv "$source_file" "$destination_folder"
 
-echo "FILE MOVED OK"
+mv "$source_folder"/*.txt "$destination_folder" 2>/dev/null
+
+echo "ALL TXT FILES MOVED OK"

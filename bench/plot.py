@@ -4,13 +4,11 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 
 
-INPUT_FILE = Path("resutls/nec.txt")
-OUTPUT_FILE = Path("resutls/nec_mrr_plot.png")
-
+INPUT_DIR = Path("results")
 TARGET_SORTERS = ["AISorter", "NoSorter", "SizeSorter"]
 
 
-def parse_mrr_blocks(text: str):
+def parse_mmr_blocks(text: str):
     results = {}
 
     section_pattern = re.compile(
@@ -28,6 +26,7 @@ def parse_mrr_blocks(text: str):
         if sorter_name not in TARGET_SORTERS:
             continue
 
+        # Parse ONLY the MMR block
         mmr_block_match = re.search(
             r"MMR\s*\n\s*Prefix\s*\|\s*Mean Reciprocal Rank\s*\n(?P<table>.*?)(?=\n\s*NDCG\b|\Z)",
             body,
@@ -61,15 +60,13 @@ def parse_mrr_blocks(text: str):
     return results
 
 
-def main():
-    if not INPUT_FILE.exists():
-        raise FileNotFoundError(f"Input file not found: {INPUT_FILE}")
-
-    text = INPUT_FILE.read_text(encoding="utf-8")
-    data = parse_mrr_blocks(text)
+def make_plot(input_file: Path):
+    text = input_file.read_text(encoding="utf-8")
+    data = parse_mmr_blocks(text)
 
     if not data:
-        raise ValueError("No MRR data found in the input file.")
+        print(f"No MMR data found in: {input_file}")
+        return
 
     prefix_lengths = sorted(
         {prefix for sorter_data in data.values() for prefix in sorter_data.keys()}
@@ -80,6 +77,8 @@ def main():
         "NoSorter": {"marker": "s", "linestyle": "--", "label": "NoSorter"},
         "SizeSorter": {"marker": "^", "linestyle": "-.", "label": "SizeSorter"},
     }
+
+    output_file = input_file.with_name(f"{input_file.stem}_mmr_plot.png")
 
     plt.figure(figsize=(7.6, 6.4))
 
@@ -93,7 +92,6 @@ def main():
         plt.plot(
             prefix_lengths,
             y,
-            color="black",
             linewidth=1.8,
             markersize=7,
             marker=style["marker"],
@@ -102,17 +100,28 @@ def main():
         )
 
     plt.xlabel("Prefix Length", fontsize=16)
-    plt.ylabel("Average MRR", fontsize=16)
+    plt.ylabel("Mean Reciprocal Rank", fontsize=16)
     plt.xticks(prefix_lengths, fontsize=12)
     plt.yticks(fontsize=12)
-    plt.ylim(0.1, 0.9)
     plt.grid(True, linestyle="-", linewidth=1, alpha=0.6)
     plt.legend(title="Strategy", fontsize=11, title_fontsize=12, frameon=False)
     plt.tight_layout()
-    plt.savefig(OUTPUT_FILE, dpi=300, bbox_inches="tight")
-    plt.show()
+    plt.savefig(output_file, dpi=300, bbox_inches="tight")
+    plt.close()
 
-    print(f"Saved plot to: {OUTPUT_FILE}")
+    print(f"Saved plot to: {output_file}")
+
+
+def main():
+    if not INPUT_DIR.exists():
+        raise FileNotFoundError(f"Input directory not found: {INPUT_DIR}")
+
+    txt_files = sorted(INPUT_DIR.glob("*.txt"))
+    if not txt_files:
+        raise FileNotFoundError(f"No .txt files found in: {INPUT_DIR}")
+
+    for txt_file in txt_files:
+        make_plot(txt_file)
 
 
 if __name__ == "__main__":

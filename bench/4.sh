@@ -7,8 +7,8 @@ python plot.py
 
 echo "PLOT OK"
 
-rm -rf image/
-rm -rf venv/
+# rm -rf image/
+# rm -rf venv/
 
 
 echo "CLEAN OK"

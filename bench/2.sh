@@ -24,5 +24,9 @@ echo "AI-SORTER OK"
 
 echo "Done Bench installation"
 ./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval --save "CooStaticBenchmarksVariablesSorter nec."
+./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval --save "CooStaticBenchmarksVariablesSorter ast."
+
+./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval --save "CooStaticBenchmarksMessageSorter nec."
+./pharo Pharo14.0-SNAPSHOT-64bit-359c9be46a.image eval --save "CooStaticBenchmarksMessageSorter ast."
 
 echo "BENCH OK"

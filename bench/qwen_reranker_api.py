@@ -1,4 +1,5 @@
 import logging
+import os
 from contextlib import asynccontextmanager
 from typing import Any, Dict, List, Optional
 
@@ -9,7 +10,10 @@ from sentence_transformers import CrossEncoder
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("qwen_reranker_api")
 
-DEFAULT_MODEL = "tomaarsen/Qwen3-Reranker-0.6B-seq-cls"
+DEFAULT_MODEL = os.environ.get(
+    "QWEN_RERANKER_MODEL",
+    "tomaarsen/Qwen3-Reranker-0.6B-seq-cls",
+)
 reranker: Optional[CrossEncoder] = None
 
 

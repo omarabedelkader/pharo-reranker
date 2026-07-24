@@ -2,6 +2,7 @@
 set -euo pipefail
 
 source venv/bin/activate
+echo "Plot input directory: ${PLOT_INPUT_DIR:-results}"
 python plot.py
 
 

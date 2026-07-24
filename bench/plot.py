@@ -1,10 +1,11 @@
+import os
 import re
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 
 
-INPUT_DIR = Path("results")
+INPUT_DIR = Path(os.environ.get("PLOT_INPUT_DIR", "results"))
 TARGET_SORTERS = ["AISorter", "NoSorter", "SizeSorter"]
 
 

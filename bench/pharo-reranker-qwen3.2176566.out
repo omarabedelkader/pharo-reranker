@@ -1,0 +1,14 @@
+[2026-07-24 23:15:36] Job started
+[2026-07-24 23:15:36] Root directory: /home/oabedelk/pharo-reranker/bench
+[2026-07-24 23:15:36] Run directory: /home/oabedelk/pharo-reranker/bench/oar-runs/2176566
+[2026-07-24 23:15:36] Detected 2 NVIDIA GPU(s)
+[2026-07-24 23:15:36] Allocated host(s): chirop-2.lille.grid5000.fr chirop-4.lille.grid5000.fr chirop-5.lille.grid5000.fr
+[2026-07-24 23:15:36] Launching one model per host
+[2026-07-24 23:15:36] Launching 0.6b on chirop-2.lille.grid5000.fr with 64 core slot(s)
+[2026-07-24 23:15:36] Launching 4b on chirop-4.lille.grid5000.fr with 64 core slot(s)
+[2026-07-24 23:15:36] Launching 8b on chirop-5.lille.grid5000.fr with 64 core slot(s)
+[2026-07-25 02:26:03] 0.6b completed
+[2026-07-25 02:26:03] 4b completed
+[2026-07-25 02:26:03] 8b completed
+[2026-07-25 02:26:03] Summary: /home/oabedelk/pharo-reranker/bench/oar-runs/2176566/summary.tsv
+[2026-07-25 02:26:03] Job finished

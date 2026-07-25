@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #OAR -q default
 #OAR -p chirop
-#OAR -l host=3,walltime=30:00:00
+#OAR -l host=3,walltime=55:00:00
 #OAR -n pharo-reranker-qwen3
 #OAR -O pharo-reranker-qwen3.%jobid%.out
 #OAR -E pharo-reranker-qwen3.%jobid%.err

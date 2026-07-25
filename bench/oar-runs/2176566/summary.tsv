@@ -1,0 +1,4 @@
+label	model	status	results_dir	logs_dir
+0.6b	tomaarsen/Qwen3-Reranker-0.6B-seq-cls	ok	/home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/0.6b/results	/home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/0.6b/logs
+4b	tomaarsen/Qwen3-Reranker-4B-seq-cls	ok	/home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/4b/results	/home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/4b/logs
+8b	tomaarsen/Qwen3-Reranker-8B-seq-cls	ok	/home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/8b/results	/home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/8b/logs

@@ -1,0 +1,5 @@
+[2026-07-24 23:15:37] [0.6b] Worker started on chirop-2.lille.grid5000.fr
+[2026-07-24 23:15:37] [0.6b] Model: tomaarsen/Qwen3-Reranker-0.6B-seq-cls
+[2026-07-24 23:15:37] [0.6b] Results: /home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/0.6b/results
+[2026-07-25 02:26:03] [0.6b] Worker finished
+[2026-07-25 02:26:03] Stopping reranker pid 25880

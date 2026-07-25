@@ -1,0 +1,5 @@
+[2026-07-24 23:15:39] [8b] Worker started on chirop-5.lille.grid5000.fr
+[2026-07-24 23:15:39] [8b] Model: tomaarsen/Qwen3-Reranker-8B-seq-cls
+[2026-07-24 23:15:39] [8b] Results: /home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/8b/results
+[2026-07-24 23:25:01] [8b] Worker finished
+[2026-07-24 23:25:01] Stopping reranker pid 9165

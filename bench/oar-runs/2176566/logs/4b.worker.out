@@ -1,0 +1,5 @@
+[2026-07-24 23:15:39] [4b] Worker started on chirop-4.lille.grid5000.fr
+[2026-07-24 23:15:39] [4b] Model: tomaarsen/Qwen3-Reranker-4B-seq-cls
+[2026-07-24 23:15:39] [4b] Results: /home/oabedelk/pharo-reranker/bench/oar-runs/2176566/models/4b/results
+[2026-07-24 23:25:06] [4b] Worker finished
+[2026-07-24 23:25:06] Stopping reranker pid 51478
